@@ -1,0 +1,20 @@
+<div class="productcontainer">
+  <div class="oneproduct">
+    <div class="products">
+      <div class="image">
+        <%= link_to product do %>
+        <%= image_tag product.picture.url %>
+        <% end %>
+      </div>
+      <div class="productname">
+        <%= link_to product.title, product %>
+      </div>
+      <div class="fields">
+        <%= product.author_name %>
+      </div>
+      <div class="prices">
+        <%= number_to_currency product.price, locale: params[:locale] %>
+      </div>
+    </div>
+  </div> <!-- hetmotproduct -->
+</div> <!-- het productcontainer -->

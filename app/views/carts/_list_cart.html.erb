@@ -1,0 +1,21 @@
+<% current_cart.each do |key, val| %>
+  <tr>
+    <% product = find_product key %>
+    <td class="id"><%= product.id %></td>
+    <td><%= image_tag product.picture.url %></td>
+    <td><%= product.title %></td>
+    <td class="price"><%= product.price %></td>
+    <td class="num">
+      <input value="<%= val %>" class="number_custom1" type="number" name="quantity" id="quantity"
+        min="<%= Settings.quantity_min %>" max=<%= product.num_exist %>>
+    </td>
+    <td class="total">
+      <%= total_price(product.price, val) %>
+    </td>
+    <td  >
+      <%= link_to cart_path(id: product.id), method: :delete, data: {confirm: t(".you_sure")}, remote: true,class: "cart_delete" do %>
+        <button ><i class="far fa-trash-alt"></i></button>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

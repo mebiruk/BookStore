@@ -1,0 +1,264 @@
+en:
+  activerecord:
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: Title can't be blank
+              too_long: Title too long
+            publisher_name:
+              blank: Publisher can't be blank
+              too_long: Publisher too long !
+            author_name:
+              blank: Author can't be blank !
+              too_long: Author too long
+            price:
+              blank: Price can't be blank !
+            num_exist:
+              blank: Num of exist can't be blank
+            description:
+              blank: Description can't be blank
+            picture:
+              blank: Picture can't be blank
+    attributes:
+      order:
+        processing: Processing
+        cancel: Cancel
+        success: Success
+  admin:
+    categories:
+      new:
+        name: Name
+        placeholder: Category's name
+        parent: Category's parent
+        create: Create
+        no_parent: No parent
+        title: Add new category
+    products:
+      new:
+        title: Title
+        placeholder: Product's name
+        category: Category
+        publisher_name: Publisher
+        author_name: Author
+        price: Price
+        num_exist: Number of product
+        description: Description
+        create: Create
+        title: Add new a book
+  orders:
+    index:
+      history: History orders
+      time: Time
+      status: Status
+      receiver: Receiver
+      mount: Mount
+      address: Address
+      action: Action
+      no_order: No order
+      myorder: My order
+    order:
+      details: Details
+      cancel_order: Cancel order
+      see_details: See details
+      image: Image
+      name: Name
+      number: Number
+      amount: Amount
+      close: Close
+      you_sure: You sure ?
+  layouts:
+    header:
+      tim: Search
+      login: Log in
+      category: Categories
+      cart: Cart
+      profile: My Profile
+      my_order: My order
+      logout: Logout
+    footer:
+      help: Help
+      hotline: Hotline
+      about: About
+      recruitment: Recruitment
+      account: Account
+      notifi: Notification
+      guide: Guide
+      shopping_guide: Shopping guide
+      transportation_method: Transportation method
+      payment_method: Payment_method
+    top_product:
+      seeall: See all
+      top_sale: Top Book Sale
+    newproduct:
+      seeall: See all
+      new_book: New Book
+  shared:
+    error_messages:
+      errors_count:
+        one: 1 error
+        other: "%{count} errors"
+  static_pages:
+    home:
+      homepage: Book store online
+  sessions:
+    new:
+      login: Log in
+      email: Email
+      pass: Password
+      new: New user
+      signup: Sign up now!
+      login: Log in
+  users:
+    form:
+      name: Name
+      email: Email
+      password: Password
+      confirmation: Password confirmation
+      create: Create my account
+      address: Address
+      phone: Phone
+    new:
+      sign: Sign up
+      create: Create account
+    show:
+      logout: Logout
+      edit_profile: Edit Profile
+  products:
+    show:
+      home: Home
+      author: Author
+      publisher: Publisher
+      free_plastic: Free plastic wrap
+      free_ship: Free delivery in inner city HCM with orders
+      free_ship2: Free delivery nationwide with orders
+      book_intro: Book introduction
+      view_more: View more...
+      collapse: Collapse
+      vnd: $
+      review: Create your review
+      out_stock: Hết hàng
+      add_to_cart: Add to cart
+    form_review:
+      rate: Rate
+      comment: Comments
+      submit: Submit
+  carts:
+    index:
+      cart: Cart
+      image: Image
+      title: Title
+      price: Price
+      quantity: Quantity
+      amount: Mounts
+      vnd: $
+      total_price: Total price
+      login_to: Login to order
+      action: Action
+    list_cart:
+      vnd: $
+      you_sure: You sure ?
+    form_order:
+      infor: Receiver's information
+      receiver: Receiver
+      phone: Phone
+      address: Address
+      confirm: Confirm
+  categories:
+    show:
+      home: Home
+  newproducts:
+    index:
+      newbook: New Books
+      home: Home
+  topsales:
+    index:
+      topsale: Top sale
+      home: Home
+  newproduct:
+    index:
+      new_book: Sách mới
+  devise:
+    sessions:
+      new:
+        title: Log in
+        email: Email
+        password: Password
+        remember_me: Remember me
+        submit: Log in
+    registrations:
+      new:
+        title: Sign up
+        name: Name
+        email: Email
+        password: Password
+        password_confirm: Password Confirmation
+        sign_up: Sign up
+        character_min: Characters minimum
+      edit:
+        title: Edit Profile
+        email: Email
+        name: Name
+        phone: Phone
+        address: Address
+        password: Password
+        password_confirm: Password Confirmation
+        current_password: Current Password
+        update: Update
+        need_currentpass: we need your current password to confirm your changes
+        leave_blank: leave blank if you don't want to change it
+        character_min: Characters minimum
+        waiting_confirm: Currently waiting confirmation for
+    passwords:
+      new:
+        title: Forgot your password?
+        email: Email
+        send: Send to email
+      edit:
+        title: Change your password
+        new_password: New Password
+        confirm_new_password: Confirm new password
+        change_my_password: Change password
+        character_min: Characters minimum
+    mailer:
+      reset_password_instructions:
+        hello: Hello
+        request: Someone has requested a link to change your password
+        change_my_pass: Change my password
+      confirmation_intructions:
+        welcome: Welcome
+        you_can_confirm: You can confirm your account email through the link below
+        confirm_my_account: Confirm my account
+    confirmations:
+      new:
+        title: Resend confirmation instruction
+        email: Email
+        resend_to_email: Resend to email
+    shared:
+      links:
+        log_in: Log in
+        sign_up: Sign up
+        forgot_password: Forgot password ?
+  signup_suc: Account was create!
+  danger: Signup failse
+  invalid: Invalid email/password combination
+  category_created: Category was created !
+  create_failse: Create category fails !
+  create_success: Create success !
+  create_product_failse: Create product fails !
+  not_found_product: Not found product !
+  review_success: Review success !
+  review_fails: Review fails !
+  update_cart: Cart was update !
+  delete_cart: Delete success !
+  quantity_in_stock: "Quantity in stock: "
+  please_enter_num: Please enter the quantity
+  order_success: Order success !
+  order_failse: Order failse !
+  cart_empty: Cart is empty !
+  not_found_cate: Not found category
+  user_not_admin: User not Admin
+  update_order_failed: Update failed !
+  not_found_order: Not found order !
+  welcome_admin: Welcome to admin page !

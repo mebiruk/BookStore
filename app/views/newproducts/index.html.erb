@@ -1,0 +1,26 @@
+<% provide :title, t(".newbook") %>
+<section class="main-detail">
+  <div class="container">
+    <div class="row">
+      <div class="pathway">
+        <ul class="path">
+          <li><%= link_to t(".home"), root_url %></li>
+          <li><%= link_to t(".newbook"), "#" %></li>
+        </ul>
+      </div> <!-- het pathway -->
+      <div class="block-content">
+        <div class="container">
+          <div class="block">
+            <h1><%= t ".newbook" %></h1>
+            <div class="pagesright">
+            </div>
+            <div class="allproducts">
+              <%= render @products %>
+            </div> <!-- het allproduct -->
+            <%= paginate @products %>
+          </div> <!-- het block -->
+        </div>
+      </div> <!-- het block-content -->
+    </div>
+  </div>
+</section>

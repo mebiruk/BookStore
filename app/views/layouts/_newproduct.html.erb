@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="floor1">
+    <div class="title">
+      <h2>
+        <p class="titlechild"><%= t ".new_book" %></p>
+        <%= link_to t(".seeall"), newproduct_path, class: "seeall" %>
+      </h2>
+    </div> <!-- het title -->
+    <div class="clear" style="clear:both;"></div>
+
+    <div class="blockcontent">
+      <div class="slideshow" id="slideshows">
+        <% @new.each do |product| %>
+          <div class="productcontainer">
+            <div class="oneproduct">
+              <div class="products">
+                <div class="image">
+                  <%= link_to product do %>
+                    <%= image_tag product.picture.url %>
+                  <% end %>
+                </div>
+                <div class="productname">
+                  <%= link_to product.title, product %>
+                </div>
+                <div class="fields">
+                  <%= product.author_name %>
+                </div>
+                <div class="prices">
+                  <%= number_to_currency product.price, locale: params[:locale] %>
+                </div>
+              </div>
+            </div> <!-- hetmotproduct -->
+          </div> <!-- het productcontainer -->
+        <% end %>
+      </div> <!-- het slideshow -->
+      <div class="list-btn">
+        <button class="prevbtn" id="prev-slide" onclick="prevslide()"><</button>
+        <button class="nextbtn" id="next-slide" onclick="nextslide()">></button>
+      </div>
+    </div> <!-- hetblockcontent -->
+  </div>
+</div>

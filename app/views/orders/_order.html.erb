@@ -1,0 +1,56 @@
+<tr>
+  <td><%= I18n.l(order.created_at, format: :long, locale: params[:locale]) %></td>
+  <td id="order_<%= order.id %>">
+    <%= t "activerecord.attributes.order.deliver_status.#{order.deliver_status}" %>
+  </td>
+  <td><%= order.receiver %></td>
+  <td><%= number_to_currency order.total_price, locale: params[:locale] %></td>
+  <td><%= order.address %></td>
+  <td class="text-center">
+    <% if order.processing? %>
+      <div class="order_details">
+        <%= link_to order_path(id: order.id, status: deliver_status(:cancel)), method: :patch, data: {confirm: t(".you_sure")},
+          remote: true do %>
+          <button class="btn btn_infor" id="btn_order_<%= order.id %>"><%= t ".cancel_order" %></button>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="order_details">
+      <button type="button" class="btn btn_infor"
+        data-toggle="modal" data-target="#myModal-<%= order.id %>">
+        <i class="fas fa-info"></i>
+      </button>
+      <div class="modal fade" id="myModal-<%= order.id %>" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"><%= t ".see_details" %></h4>
+            </div>
+            <div class="modal-body text-center">
+              <table class="table-bordered custom_table">
+                <tr>
+                  <th width="10%" class="text-center"><%= t ".image" %></th>
+                  <th width="20%" class="text-center"><%= t ".name" %></th>
+                  <th width="10%" class="text-center"><%= t ".number" %></th>
+                  <th width="15%" class="text-center"><%= t ".amount" %></th>
+                </tr>
+                <% order.order_products.each do |op| %>
+                  <tr>
+                    <td><%= image_tag op.product.picture.url %></td>
+                    <td><%= op.product.title %></td>
+                    <td><%= op.num_product %></td>
+                    <td><%= number_to_currency op.price, locale: params[:locale] %></td>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>

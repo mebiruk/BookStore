@@ -1,0 +1,17 @@
+<h2><%= t ".infor" %></h2>
+<%= form_for @order do |f| %>
+  <div class="field">
+    <%= f.label t(".receiver") %>
+    <%= f.text_field :receiver, class: "form-control form_custom_pro" %>
+  </div>
+  <div class="field">
+    <%= f.label t(".phone") %>
+    <%= f.text_field :phone, class: "form-control form_custom_pro" %>
+  </div>
+  <div class="field">
+    <%= f.label t(".address") %>
+    <%= f.text_field :address, class: "form-control form_custom_pro" %>
+  </div>
+  <%= f.hidden_field :total_price, value: @total %>
+  <%= f.submit t(".confirm"), class: "btn btn-primary btn_custom" %>
+<% end %>

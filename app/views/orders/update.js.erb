@@ -1,0 +1,4 @@
+$('#order_<%= @order.id %>')
+  .html('<td class="text-center" id="order_<%= @order.id %>">'+
+  '<%= t "activerecord.attributes.order.deliver_status.#{@order.deliver_status}" %></td>');
+$('#btn_order_<%= @order.id %>').addClass('d_none');

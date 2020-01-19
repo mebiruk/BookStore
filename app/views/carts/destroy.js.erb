@@ -1,0 +1,4 @@
+$('.total_price').html( '<div class= "total_price"><%= @total_price %></div>');
+$('.cart_delete').bind('ajax:success', function() {
+   $(this).closest('tr').fadeOut();
+});

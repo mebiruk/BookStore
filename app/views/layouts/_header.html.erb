@@ -1,0 +1,92 @@
+<header class="header">
+  <div class="top-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="logo">
+            <%= link_to root_url do %>
+              <%= image_tag("logo.png") %>
+            <% end %>
+          </div> <!-- het logo -->
+        </div>
+        <div class="col-md-6" id="search-form">
+          <form>
+            <input type="text" name="seach" id="search" class="form-control timkiem">
+            <span class="search"><%= t ".tim" %></span>
+          </form>
+          <div class="list-group d_none" id="show-search-product">
+          </div>
+        </div> <!-- het input -->
+        <div class="col-md-3">
+          <div class="login">
+            <% if user_signed_in? %>
+              <div class="user_name">
+                <%= current_user.name %>
+                <ul class="drop_user">
+                  <li><%= link_to t(".profile"), current_user %></li>
+                  <li><%= link_to t(".my_order"), orders_path %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+                  </li>
+                </ul>
+              </div>
+            <% else %>
+              <%= link_to user_session_path do %>
+                <i class="fa fa-user"></i>
+                <span><%= t ".login" %></span>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="cart_big">
+            <%= link_to carts_path do %>
+              <div class="cart">
+                <svg viewBox="0 0 576 512" class="svg-inline--fa fa-shopping-cart fa-w-18 fa-3x">
+                  <path fill="currentColor"
+                    d="M551.991 64H144.28l-8.726-44.608C133.35 8.128 123.478 0 112 0H12C5.373 0 0
+                    5.373 0 12v24c0 6.627 5.373 12 12 12h80.24l69.594 355.701C150.796 415.201 144
+                    430.802 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0
+                    0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0
+                    64-28.654 64-64 0-18.136-7.556-34.496-19.676-46.142l1.035-4.757c3.254-14.96-8.142
+                    -29.101-23.452-29.101H203.76l-9.39-48h312.405c11.29 0 21.054-7.869 23.452-18.902l45.216
+                    -208C578.695 78.139 567.299 64 551.991 64zM208 472c-13.234 0-24-10.766-24-24s10.766-24
+                    24-24 24 10.766 24 24-10.766 24-24 24zm256 0c-13.234 0-24-10.766-24-24s10.766-24 24-24
+                    24 10.766 24 24-10.766 24-24 24zm23.438-200H184.98l-31.31-160h368.548l-34.78 160z"
+                  ></path>
+                </svg>
+              </div>
+            <span><%= t ".cart" %></span>
+              <% if current_cart.present? %>
+                <span>(<%= cart_size %>)</span>
+              <% end %>
+            </span>
+            <i class="fa fa-sort-down"></i>
+            <% end %>
+          </div>
+        </div> <!-- het login,gio hang -->
+      </div>
+    </div>
+  </div> <!-- het top-header -->
+  <div class="bottom-header">
+    <div class="container">
+      <div class="row">
+      <div class="menu">
+        <div class="menu_products">
+          <i class="fa fa-bars"></i>
+          <%= t ".category" %>
+        </div>
+        <%= render "layouts/category" %>
+      </div>
+      <div class="col-md-7">
+      </div>
+      <div class="col-md-2">
+        <%= link_to locale: "en" do %>
+          <%= image_tag "us.png", class: "flag" %>
+        <% end %>
+        <%= link_to locale: "vi" do %>
+        <%= image_tag "vn.png", class: "flag" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>

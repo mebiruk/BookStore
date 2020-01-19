@@ -1,0 +1,86 @@
+<% provide :title, @product.title %>
+<section class="main-detail">
+  <div class="container">
+    <div class="row">
+      <div class="pathway">
+        <ul class="path">
+          <li>
+            <%= link_to t(".home"), root_url %>
+          </li>
+          <% if parent_cate(@product.category_id).present? %>
+            <li><%= link_to parent_cate(@product.category_id).name, parent_cate(@product.category_id) %></li>
+          <% end %>
+          <li><%= link_to @product.category.name, @product.category %></li>
+          <li><%= @product.title %></li>
+        </ul>
+      </div> <!-- het pathway -->
+      <div class="content-detail">
+        <div class="left">
+          <%= image_tag @product.picture.url %>
+        </div>
+        <div class="right">
+          <div class="product-infor">
+            <h1><%= @product.title %></h1>
+            <div class="viewfield">
+              <div class="author">
+                <span><%= t ".author" %>: <%= @product.author_name %> </span>
+              </div>
+              <div class="publisher">
+                <span><%= t ".publisher" %>: <%= @product.publisher_name %></span>
+              </div>
+            </div> <!-- het viewfield -->
+            <div class="prices-container">
+              <div class="price">
+                <%= number_to_currency @product.price, locale: params[:locale] %>
+              </div>
+              <div class="goshop">
+                <% if @product.num_exist.zero? %>
+                  <div class="outstock"><%= t ".out_stock" %></div>
+                <% else %>
+                  <%= form_with url: carts_path  do |f| %>
+                    <%= f.number_field :quantity, value: 1, class: "number_custom",
+                      min: Settings.quantity_min, max: @product.num_exist %>
+                    <%= f.hidden_field :id, value: @product.id %>
+                    <%= f.submit t(".add_to_cart"), class: "submit-btn btn" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div> <!-- het prices-container -->
+            <div class="intro">
+              <p><i class=" fa fa-check"></i><span><%= t ".free_plastic" %></span></p>
+              <p><i class=" fa fa-check"></i><span><%= t ".free_ship" %></span></p>
+              <p><i class=" fa fa-check"></i><span><%= t ".free_ship2" %></span></p>
+              <p><%= @reviews.size %><%= t ".rate" %></p>
+              <% if @reviews.size.positive? %>
+                <p><%= t ".average" %><%= average_star %> <i class="fa fa-star active"></i></p>
+              <% end %>
+            </div> <!-- het intro -->
+          </div> <!-- het produce-infor -->
+        </div> <!-- het right -->
+        <div class="clear"></div>
+
+        <div class="aboutbook">
+          <div class="about">
+            <h3><%= t ".book_intro" %></h3>
+          </div>
+          <div class="content collapse1" id="content">
+            <p>
+              <%= @product.description.html_safe %>
+            </p>
+          </div>
+          <div class="viewmore" onclick="viewmore()" id="viewmore">
+            <span><%= t ".view_more" %></span>
+          </div>
+        </div> <!-- het gioi thieu sach -->
+      </div> <!-- het content-detail -->
+    </div>
+    <% if user_signed_in? %>
+      <%= render "form_review" %>
+    <% end %>
+    <div id="comment_id">
+      <% if @reviews %>
+        <%= render @reviews %>
+      <% end %>
+    </div>
+  </div> <!-- het container -->
+</section>

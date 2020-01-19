@@ -1,0 +1,11 @@
+<ul class="list">
+  <% @parent_category.each do |cate| %>
+    <li><%= link_to cate.name, cate %>
+    <ul class="list-child">
+      <% cate.childs.each do |ca| %>
+        <li><%= link_to ca.name, ca %></li>
+      <% end %>
+    </ul>
+  </li>
+  <% end %>
+</ul>

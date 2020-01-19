@@ -1,0 +1,27 @@
+<% provide :title, t(".myorder") %>
+<section class="main-detail">
+  <div class="container">
+    <h2><%= t ".history" %></h2>
+    <div class="block">
+      <% unless @orders.size.zero? %>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="20%"><%= t ".time" %></th>
+              <th width="15%"><%= t ".status" %></th>
+              <th width="15%"><%= t ".receiver" %></th>
+              <th width="10%"><%= t ".mount" %></th>
+              <th><%= t ".address" %></th>
+              <th width="20%"><%= t ".action" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @orders %>
+          </tbody>
+        </table>
+      <% else %>
+        <div><%= t ".no_order" %></div>
+      <% end %>
+    </div>
+  </div>
+</section>

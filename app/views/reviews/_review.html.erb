@@ -1,0 +1,12 @@
+<div class="wrap-comment">
+  <span class="user"><%= review.user.name %></span>
+  <span class="rated">
+    <% review.rate.to_i.times do %>
+      <i class="fa fa-star active"></i>
+    <% end %>
+    <% (Settings.stars_number_rate - review.rate.to_i).times do %>
+      <i class="fa fa-star"></i>
+    <% end %>
+  </span>
+  <p class="comment-content"><%= review.content %></p>
+</div>

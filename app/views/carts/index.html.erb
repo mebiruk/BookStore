@@ -1,0 +1,43 @@
+<% provide :title, t(".cart") %>
+<section class="cart_index">
+  <div class="container">
+    <% unless current_cart? %>
+      <div class="cart_empty">
+        <%= image_tag "cart-empty.png" %>
+      </div>
+    <% else %>
+      <div class="gh">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="5%">#</th>
+              <th scope="15%"><%= t ".image" %></th>
+              <th scope="25%"><%= t ".title" %></th>
+              <th scope="10%"><%= t ".price" %></th>
+              <th width="15%"><%= t ".quantity" %></th>
+              <th scope="10%"><%= t ".amount" %></th>
+              <th scope="10%"><%= t ".action" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render "list_cart" %>
+          </tbody>
+        </table>
+        <div class="total_price">
+          <%= @total %>
+        </div>
+        <div class="total_price_name">
+          <%= t ".total_price" %>:
+        </div>
+      </div>
+    <% end %>
+    <div class="clear"></div>
+    <div class="order">
+      <% unless user_signed_in? %>
+        <%= link_to t(".login_to"), user_session_path %>
+      <% else %>
+        <%= render "form_order" %>
+      <% end %>
+    </div>
+  </div>
+</section>

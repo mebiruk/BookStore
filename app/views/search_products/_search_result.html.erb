@@ -1,0 +1,16 @@
+<% @products.each do |element| %>
+  <%= link_to product_path(id: element.id) do %>
+    <div class="small-product">
+      <div class="row">
+        <div class="col-md-2 image">
+          <%= image_tag element.picture.url %>
+        </div>
+        <div class="col-md-8 info">
+          <div class="title">
+            <%= element.title %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

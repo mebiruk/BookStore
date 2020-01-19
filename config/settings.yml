@@ -1,0 +1,35 @@
+maximum_length_name: 50
+maximum_length_email: 255
+maximum_length_address: 255
+max_content: 140
+minimum_length_pass: 6
+maximum_length_phone: 15
+category:
+  image_height: 400
+  image_width: 400
+file_accept: image/jpeg, image/gif, image/png
+scroll: 30
+stars_number_rate: 5
+rate: [1,2,3,4,5]
+quantity_min: 1
+paginate: 15
+round_helper: 1
+scroll: 30
+factories:
+  products:
+    description: 100
+    price: 50000
+    num_exist: 20
+    title_max_length: 50
+    author_max_length: 50
+    publisher_max_length: 50
+    picture: "https://loremflickr.com/800/500/capital"
+    invalid: 51
+  users:
+    phone_length: 13
+    default_role: 0
+    pass_length: 6
+  reviews:
+    rate: 3
+num_top: 10
+min_op: 0

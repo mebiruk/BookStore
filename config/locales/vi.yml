@@ -1,0 +1,264 @@
+vi:
+  activerecord:
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: Tên không thể trống
+              too_long: Tên quá dài
+            publisher_name:
+              blank: Nhà phát hành không thể trống
+              too_long: Tên nhà phát hành quá dài
+            author_name:
+              blank: Tác giả không thể trống
+              too_long: Tên tác giả quá dài
+            price:
+              blank: Giá không thể trống
+            num_exist:
+              blank: Số lượng không thể trống
+            description:
+              blank: Mô tả không thể trống
+            picture:
+              blank: Hình ảnh không thể trống
+    attributes:
+      order:
+        processing: Đang giao hàng
+        cancel: Đã hủy
+        success: Giao hàng thành công
+  admin:
+    categories:
+      new:
+        name: Tên danh mục
+        placeholder: tên danh mục
+        parent: Danh mục cha
+        create: Tạo danh mục
+        no_parent: Là danh mục gốc
+        title: Thêm danh mục
+    products:
+      new:
+        title: Tên sách
+        placeholder: Nhập tên sách
+        category: Danh mục
+        publisher_name: Nhà phát hành
+        author_name: Tác giả
+        price: Giá
+        num_exist: Số lượng
+        description: Mô tả
+        create: Thêm sách
+        title: Thêm sách mới
+  orders:
+    index:
+      history: Lịch sử đơn hàng
+      time: Thời gian đặt
+      status: Tình trạng
+      receiver: Người nhận
+      mount: Tổng giá trị
+      address: Địa chỉ
+      action: Hành động
+      no_order: Chưa có đơn hàng nào
+      myorder: Lịch sử đơn hàng
+    order:
+      details: Xem chi tiết
+      cancel_order: Hủy đơn hàng
+      see_details: Xem chi tiết
+      image: Hình ảnh
+      name: Tên sản phẩm
+      number: Số lượng
+      amount: Thành tiền
+      close: Đóng
+      you_sure: Bạn chắc chắn hủy ?
+  layouts:
+    header:
+      tim: Tìm
+      login: Đăng nhập
+      category: DANH MỤC SẢN PHẨM
+      cart: Giỏ hàng
+      profile: Thông tin tài khoản
+      my_order: Lịch sử đơn hàng
+      logout: Đăng xuất
+    footer:
+      help: Hỗ trợ khách hàng
+      hotline: Hotline
+      about: Giới thiệu
+      recruitment: Tuyển dụng
+      account: Tài khoản
+      notifi: Thông báo
+      guide: Hướng dẫn
+      shopping_guide: Hướng dẫn mua hàng
+      transportation_method: Phương thức vận chuyển
+      payment_method: Phương thức thanh toán
+    top_product:
+      seeall: Xem tất cả
+      top_sale: Sách bán chạy
+    newproduct:
+      seeall: Xem tất cả
+      new_book: Sách mới
+  shared:
+    error_messages:
+      errors_count:
+          one: 1 lỗi
+          other: "%{count} lỗi"
+  static_pages:
+    home:
+      homepage: Website mua sách online được yêu thích nhất
+  sessions:
+    new:
+      login: Đăng nhập
+      email: Email
+      pass: Mật khẩu
+      new: Đăng ký
+      signup: Đăng ký ngay
+      login: Đăng nhập
+  users:
+    form:
+      name: Tên
+      email: Email
+      password: Mật khẩu
+      confirmation: Xác nhận mật khẩu
+      create: Tạo tài khoản
+      address: Địa chỉ
+      phone: Số điện thoại
+    new:
+      sign: Đăng ký
+      create: Tạo tài khoản
+    show:
+      logout: Đăng xuất
+      edit_profile: Cập nhật thông tin
+  products:
+    show:
+      home: Trang chủ
+      author: Tác giả
+      publisher: Nhà phát hành
+      free_plastic: Bọc plastic miễn phí
+      free_ship: Giao hàng miễn phí trong nội thành TP. HCM với đơn hàng
+      free_ship2: Giao hàng miễn phí toàn quốc với đơn hàng
+      book_intro: Giới thiệu sách
+      view_more: Xem thêm nội dung...
+      collapse: Thu gọn
+      vnd: ₫
+      review: Gửi đánh giá của bạn
+      out_stock: Out of stock
+      add_to_cart: Mua hàng
+    form_review:
+      rate: Đánh giá
+      comment: Thêm bình luận
+      submit: Gửi
+  carts:
+    index:
+      cart: Giỏ hàng
+      image: Ảnh
+      title: Tên
+      price: Giá
+      quantity: Số lượng
+      amount: Thành tiền
+      vnd: ₫
+      total_price: Tổng tiền
+      login_to: Đăng nhập để thanh toán
+      action: Hành động
+    list_cart:
+      vnd: ₫
+      you_sure: Xóa sản phẩm khỏi giỏ hàng ?
+    form_order:
+      infor: Thông tin người nhận
+      receiver: Người nhận
+      phone: Số điện thoại
+      address: Địa chỉ nhận
+      confirm: Xác nhận
+  categories:
+    show:
+      home: Trang chủ
+  newproducts:
+    index:
+      newbook: Sách mới
+      home: Trang chủ
+  topsales:
+    index:
+      topsale: Sách bán chạy
+      home: Trang chủ
+  newproduct:
+    index:
+      new_book: New Book
+  devise:
+    sessions:
+      new:
+        title: Đăng nhập
+        email: Email
+        password: Mật khẩu
+        remember_me: Nhớ tài khoản
+        submit: Đăng nhập
+    registrations:
+      new:
+        title: Đăng ký
+        name: Tên
+        email: Email
+        password: Mật khẩu
+        password_confirm: Xác nhận mật khẩu
+        sign_up: Đăng ký
+        character_min: ký tự tối thiểu
+      edit:
+        title: Cập nhật thông tin
+        email: Email
+        name: Tên
+        phone: Số điện thoại
+        address: Địa chỉ
+        password: Mật khẩu
+        password_confirm: Xác nhận mật khẩu
+        current_password: Mật khẩu hiện tại
+        update: Cập nhật
+        need_currentpass: nhập mật khẩu hiện tại để xác nhận
+        leave_blank: để trống nếu không đổi mật khẩu
+        character_min: ký tự tối thiểu
+        waiting_confirm: Hiện đang chờ xác nhận
+    passwords:
+      new:
+        title: Quên mật khẩu ?
+        email: Email
+        send: Gửi đến email
+      edit:
+        title: Thay đổi mật khẩu
+        new_password: Mật khẩu mới
+        confirm_new_password: Xác nhận mật khẩu mới
+        change_my_password: Đổi mật khẩu
+        character_min: ký tự tối thiểu
+    mailer:
+      reset_password_instructions:
+        hello: Xin chào
+        request: Ai đó đã yêu cầu đổi mật khẩu
+        change_my_pass: Đổi mật khẩu
+      confirmation_intructions:
+        welcome: Xin chào
+        you_can_confirm: Chọn liên kết bên dưới để kích hoạt
+        confirm_my_account: Xác nhận tài khoản
+    confirmations:
+      new:
+        title: Gửi lại xác nhận tài khoản
+        email: Email
+        resend_to_email: Gửi lại email
+    shared:
+      links:
+        log_in: Đăng nhập
+        sign_up: Đăng ký
+        forgot_password: Quên mật khẩu
+  signup_suc: Đăng ký thành công!
+  danger: Đăng ký thất bại!
+  invalid: Email hoặc mật khẩu không đúng
+  category_created: Tạo danh mục thành công!
+  create_failse: Tạo danh mục thất bại !
+  create_success: Thêm thành công !
+  create_product_failse: Thêm sản phẩm thất bại !
+  not_found_product: Không tìm thấy sản phẩm
+  review_success: Đánh giá thành công !
+  review_fails: Đánh giá thất bại !
+  update_cart: Thêm giỏ hàng thành công !
+  delete_cart: Xóa thành công !
+  quantity_in_stock: "Số lượng trong kho chỉ còn: "
+  please_enter_num: Nhập số lượng sản phẩm
+  order_success: Đặt hàng thành công !
+  order_failse: Đặt hàng thất bại !
+  cart_empty: Giỏ hàng trống !
+  not_found_cate: Không tìm thấy danh mục
+  user_not_admin: Đăng nhập tài khoản admin
+  update_order_failed: Cập nhật thất bại
+  not_found_order: Không tìm thấy đơn hàng
+  welcome_admin: Chào mừng đến với trang quản lý
