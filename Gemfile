@@ -3,7 +3,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
-gem "bootstrap-sass", "3.3.7"
+gem "bootstrap-sass", "3.4.1"
 gem "cancancan"
 gem "carrierwave"
 gem "ckeditor"
